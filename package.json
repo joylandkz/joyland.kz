@@ -1,0 +1,36 @@
+{
+  "name": "joyland.kz",
+  "version": "1.0.0",
+  "description": "homepage for https://joyland.kz",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "spago install",
+    "compile": "spago build",
+    "test": "spago test",
+    "reset": "run-p reset:spago",
+    "reset:cache": "rm -rf .cache",
+    "reset:spago": "rm -rf .spago",
+    "clean": "run-p clean:output clean:dist",
+    "clean:output": "rm -rf output/*",
+    "clean:dist": "rm -rf dist/*",
+    "repl": "spago repl",
+    "parcel:build": "parcel build index.html",
+    "parcel:serve": "parcel assets/index.html --no-autoinstall",
+    "start": "run-s parcel:serve",
+    "build": "run-s clean:dist compile parcel:build"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joylandkz/joyland.kz.git"
+  },
+  "author": "Nurlan Alkuatov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joylandkz/joyland.kz/issues"
+  },
+  "homepage": "https://github.com/joylandkz/joyland.kz#readme"
+}

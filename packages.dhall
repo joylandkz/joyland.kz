@@ -87,35 +87,8 @@ let additions =
   , etc.
   }
 -------------------------------
-
-Example:
--------------------------------
-let additions =
-  { benchotron =
-      { dependencies =
-          [ "arrays"
-          , "exists"
-          , "profunctor"
-          , "strings"
-          , "quickcheck"
-          , "lcg"
-          , "transformers"
-          , "foldable-traversable"
-          , "exceptions"
-          , "node-fs"
-          , "node-buffer"
-          , "node-readline"
-          , "datetime"
-          , "now"
-          ]
-      , repo =
-          "https://github.com/hdgarrood/purescript-benchotron.git"
-      , version =
-          "v7.0.0"
-      }
-  }
--------------------------------
 -}
+
 
 
 let upstream =
@@ -123,6 +96,16 @@ let upstream =
 
 let overrides = {=}
 
-let additions = {=}
+let additions =
+  { unicode-prelude =
+      { dependencies =
+          [ "prelude"
+          ]
+      , repo =
+          "https://github.com/vyorkin/purescript-unicode-prelude.git"
+      , version =
+          "v0.2.4"
+      }
+  }
 
 in  upstream // overrides // additions
