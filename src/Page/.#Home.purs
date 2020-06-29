@@ -1,1 +1,0 @@
-nalkuatov@ubuntu-dde.1174816:1592887599
