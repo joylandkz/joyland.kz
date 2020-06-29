@@ -14,7 +14,7 @@
     "clean:output": "rm -rf output/*",
     "clean:dist": "rm -rf dist/*",
     "repl": "spago repl",
-    "parcel:build": "parcel build index.html",
+    "parcel:build": "parcel build assets/index.html",
     "parcel:serve": "parcel assets/index.html --no-autoinstall",
     "start": "run-s parcel:serve",
     "build": "run-s clean:dist compile parcel:build"

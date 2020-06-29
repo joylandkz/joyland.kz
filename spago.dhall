@@ -7,6 +7,10 @@ You can edit this file as you like.
     [ "console"
     , "effect"
     , "psci-support"
+    , "strings"
+    , "halogen"
+    , "affjax"
+    , "datetime"
     , "unicode-prelude"
     ]
 , packages = ./packages.dhall
