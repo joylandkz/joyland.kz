@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "spago install",
     "compile": "spago build",
-    "test": "spago test",
+    "test": "spago --config test/test.dhall test",
     "reset": "run-p reset:spago",
     "reset:cache": "rm -rf .cache",
     "reset:spago": "rm -rf .spago",
