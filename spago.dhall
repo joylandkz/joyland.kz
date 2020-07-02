@@ -4,15 +4,16 @@ You can edit this file as you like.
 -}
 { name = "my-project"
 , dependencies =
-    [ "console"
-    , "effect"
-    , "psci-support"
-    , "strings"
-    , "halogen"
-    , "affjax"
-    , "datetime"
-    , "unicode-prelude"
-    ]
+  [ "affjax"
+  , "console"
+  , "datetime"
+  , "effect"
+  , "halogen"
+  , "halogen-hooks"
+  , "psci-support"
+  , "strings"
+  , "unicode-prelude"
+  ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs" ]
 }
