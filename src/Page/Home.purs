@@ -1,20 +1,27 @@
 module Joyland.Page.Home where
 
-import Prelude (Void, identity)
-import Joyland.HTML.Utils (css)
+import Joyland.Component.HTML.Info (info)
+import Data.Symbol (SProxy(..))
 import Halogen as H
 import Halogen.HTML as HH
+import Halogen.Hooks as Hooks
+import Joyland.Component.Search as Search
+import Joyland.HTML.Utils (css)
+import Prelude (Void, absurd, unit, ($))
+import Effect.Class (class MonadEffect)
 
 
-component ∷ ∀ q i m. H.Component HH.HTML q i Void m
-component =
-  H.mkComponent
-    { initialState: identity
-    , eval: H.mkEval H.defaultEval
-    , render
-    }
-  where
-    render ∷ ∀ props action. action → HH.HTML props action
-    render _ =
-      HH.div [ css "container" ] [ HH.text "hello world" ]
+component ∷ ∀ q i m. MonadEffect m ⇒ H.Component HH.HTML q i Void m
+component = Hooks.component \_ _ → Hooks.do
+  Hooks.pure $
+    HH.div [ css "container" ]
+      [ HH.div [ css "section" ]
+          [ HH.hr_
+          , info { users: 12, books: 5547 }
+          , HH.slot _search unit Search.component unit absurd
+          ]
+      ]
+
+_search ∷ SProxy "search"
+_search = SProxy
 
