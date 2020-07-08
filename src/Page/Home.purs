@@ -17,7 +17,6 @@ component = Hooks.component \_ _ → Hooks.do
     HH.div [ css "container" ]
       [ HH.div [ css "section" ]
           [ HH.hr_
-          , info { users: 12, books: 5547 }
           , HH.slot _search unit Search.component unit absurd
           ]
       ]

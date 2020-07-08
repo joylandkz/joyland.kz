@@ -9,8 +9,7 @@ info ∷ ∀ w i. { users ∷ Int, books ∷ Int} → HH.HTML w i
 info { users, books } =
   HH.nav
     [ css "level" ]
-    [ HH.div [ css "level-left"] []
-    , HH.div
+    [ HH.div
         [ css "level-right" ]
         [ HH.p
             [ css "level-item has-text-info-dark" ]
