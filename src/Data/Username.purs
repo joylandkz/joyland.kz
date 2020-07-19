@@ -1,5 +1,5 @@
 module Joyland.Data.Username
-  ( Username(..)
+  ( Username
   , parse
   , toString
   )
