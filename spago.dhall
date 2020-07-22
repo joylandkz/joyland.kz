@@ -8,6 +8,7 @@ You can edit this file as you like.
   , "console"
   , "datetime"
   , "effect"
+  , "transformers"
   , "generics-rep"
   , "halogen"
   , "halogen-hooks"
