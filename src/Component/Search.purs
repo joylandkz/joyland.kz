@@ -25,10 +25,6 @@ component = Hooks.component \_ _ → Hooks.do
 
   let
 
-    shortenIf cond
-      | cond = "is-7"
-      | otherwise = "is-12"
-
     handleChange value = Just $ do
       H.liftEffect $ log value
       Hooks.modify_ patternId (\_ → value)
@@ -36,8 +32,7 @@ component = Hooks.component \_ _ → Hooks.do
   Hooks.pure $
     HH.div [ css "columns is-centered is-multiline"]
     [ HH.div
-        [ css $ "column " <>
-          (shortenIf $ null pattern)
+        [ css $ "column is-7"
         ]
         [ HH.div [ css "field"]
             [ HH.p [ css "control has-icons-left"]
@@ -54,8 +49,7 @@ component = Hooks.component \_ _ → Hooks.do
             ]
         ]
     , HH.div
-        [ css $ "column " <>
-          (shortenIf $ null pattern)
+        [ css $ "column is-7"
         ]
         [ info { users: 12, books: 5547 } ]
     ]
