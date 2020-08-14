@@ -20,10 +20,13 @@ accountList
   → Array (HH.HTML w i)
 accountList =
   map (\acc →
-    HH.div
-      [ css "card" ]
-      [ HH.div [ css "card-content" ]
-          [ level acc ]
+         HH.div
+           [ css "column is-7"]
+           [ HH.div
+              [ css "card" ]
+              [ HH.div [ css "card-content" ]
+                  [ level acc ]
+           ]
       ])
 
 level ∷ ∀ w i. Account → HH.HTML w i
