@@ -1,11 +1,18 @@
 module Joyland.AppM where
 
+
+import Prelude (($), (<<<))
+
 import Effect.Class (class MonadEffect)
 import Effect.Aff (Aff)
 import Effect.Aff.Class (class MonadAff)
 import Control.Monad
 import Joyland.Capability.Resource.Account (class ManageAccount)
 import Joyland.Data.Account (mockAccounts)
+import Joyland.Data.Username (toString)
+import Data.Array (filter)
+import Data.String (contains)
+import Data.Maybe (fromMaybe)
 
 
 -- | TODO: Change m to appropriate monad stack later
@@ -21,5 +28,11 @@ derive newtype instance monadAffAppM    ∷ MonadAff AppM
 
 -- `fetchAccounts` should be replaced to a proper API call later
 instance appMManageAccount ∷ ManageAccount AppM where
-  fetchAccounts = pure mockAccounts
+  fetchAccounts pattern = do
+    let unwrap = fromMaybe ""
+    pure $
+      filter (\{ username } →
+                contains pattern <<< unwrap $ map toString username
+             )
+      mockAccounts
 
