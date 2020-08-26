@@ -15,7 +15,7 @@ import Data.String (contains)
 import Data.Maybe (fromMaybe)
 
 
--- | TODO: Change m to appropriate monad stack later
+-- | TODO: Change `Aff a` to `ReaderT ...` monad stack later
 newtype AppM a = AppM (Aff a)
 
 derive newtype instance functorAppM     ∷ Functor AppM
