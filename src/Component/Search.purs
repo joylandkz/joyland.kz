@@ -62,7 +62,7 @@ component = Hooks.component \_ _ → Hooks.do
           ]
           [ info { users: 12, books: 5547 } ]
       ] <>
-      accountList results
+      accountList (Pattern pattern) results
 
 emptyString ∷ String
 emptyString = ""
