@@ -4,4 +4,4 @@
 
 Please see the demo [here](https://joyland.kz)
 
-*the readme is about to be properly written*
+*this readme is about to be properly written*
