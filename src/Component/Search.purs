@@ -5,18 +5,17 @@ import Prelude
 import Joyland.HTML.Utils (css)
 import Joyland.HTML.Account (accountList)
 import Joyland.Component.HTML.Info (info)
-import Joyland.Capability.Resource.Account
+import Joyland.Capability.Resource.Account (class ManageAccount, fetchAccounts)
 
 import Effect.Console (log)
 import Effect.Class (class MonadEffect)
 import Data.Maybe (Maybe(..))
 import Data.Tuple.Nested ((/\))
-import Data.String.Pattern
+import Data.String.Pattern (Pattern(..))
 import Halogen as H
 import Halogen.HTML as HH
 import Halogen.Hooks as Hooks
 import Halogen.HTML.Properties as HP
-import Halogen.HTML.Core (PropName(..))
 import Halogen.HTML.Events as HE
 
 
