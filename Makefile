@@ -22,9 +22,6 @@ repln:
 replb:
 	npm run repl:browser
 
-css:
-	npm run css
-
 deps:
 	npm install
 
